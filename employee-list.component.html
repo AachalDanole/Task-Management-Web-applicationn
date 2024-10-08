@@ -1,0 +1,70 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div style="margin-left: 10px;">
+<h3 style="color:white;margin-left: 400px;"> Emp List</h3><br><br>
+
+<div class="list row">
+    <div class="col-md-8">
+      <div class="input-group mb-3">
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="input-group mb-3">
+                    <div class="input-group-append" style="margin-left: 150px;height:50px;margin-left:20px">
+                    <li class="nav-item dropdown" style=" list-style-type: none;"></li>
+
+
+                    
+                    
+                    <ul class="dropdown-menu">
+                      <li><a id="01" class="dropdown-item" (click)="selectedSearchType = 'empId'"><b>Employee Id </b></a></li>
+                      
+                    </ul>
+                    
+                
+                      <button class="btn btn-outline-secondary" type="button" (click)="search(selectedSearchType)" style="color: azure;background-color:#efd426 ;border-radius: 15px;">
+                        Search
+                      </button>
+
+
+                     
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+      
+            <table class = "table table-striped" style="border: solid;margin-right: 200px;width:1200px;height:min-content;background-color: rgb(19, 19, 19);color: white;opacity:70%;margin-left: 0px;">           
+    <thead>
+        <tr>
+            <th> EmployeeName</th>
+            <th>  Mail </th>
+            <th> Task</th>
+            <th> Due Date </th>
+            
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor = "let emp of emps | paginate: { itemsPerPage: count, currentPage: pageNo }" >
+            <td> {{ emp.empName }} </td>
+            <td> {{ emp.empId}} </td>
+            <td> {{ emp.task }} </td>
+            <td>{{emp.due date}}</td>
+            
+            
+            <td>
+                <button (click) = "updateTask(emp.empId)" class = "btn btn-info" style="margin-left: 10px;color:#EEE2DC;background: #075e4d">Update</button>
+                <button (click) = "deletetaskById(emp.empId)" class = "btn btn-danger" style="margin-left: 10px;background: #075e4d">Delete</button>
+            </td>
+        
+      </tr>
+    </tbody>
+</table>
+</div>
+<div> <pagination-controls (pageChange)="pageNo = $event"></pagination-controls> </div>
+
+
+

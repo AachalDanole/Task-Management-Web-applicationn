@@ -1,0 +1,40 @@
+<div class="col-md-6 offset-md-3 style=" style="opacity: 80%;color: white;">
+    <h3 style="color: white;"> Create Task </h3>
+    <form (ngSubmit) = "onSubmit()" style="background-color: black;opacity: 70%; margin: 20px;width:500px;padding-left:40px;padding-right: 40px;">
+    
+        <div class="form-group">
+            <label> EmployeeName</label>
+            <input type="text" class ="form-control" id = "EmployeeName"
+                [(ngModel)] = "employe.EmployeeName" name = "EmployeeName">
+        </div>
+    
+        <div class="form-group">
+            <label> Mail-Id</label>
+            <input type="text" class ="form-control" id = "Mail-Id"
+                [(ngModel)] = "employe.Mail-Id" name = "Mail-IdMail-Id">
+        </div>
+
+
+
+
+        <div class="form-group">
+            <label> Task </label>
+            <input type="text" class ="form-control" id = "Task"
+                [(ngModel)] = "employe.Task" name = "Task">
+        </div><br>
+
+        <div class="form-group">
+            <label> Due Date </label>
+            <input type="text" class ="form-control" id = "Date"
+                [(ngModel)] = "employe.Date" name = "Date">
+        </div><br>
+
+       
+
+       
+    
+        <button class = "btn btn-success" style="color:#EEE2DC;background:#075e4d;font-size:17px" type ="submit">Submit</button>
+    
+    </form>
+    </div>
+
